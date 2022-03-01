@@ -71,7 +71,8 @@
               "browserTarget": "OpenPersonalBudget.Client:build:production"
             },
             "development": {
-              "browserTarget": "OpenPersonalBudget.Client:build:development"
+              "browserTarget": "OpenPersonalBudget.Client:build:development",
+              "proxyConfig": "./proxy-config.json"
             }
           },
           "defaultConfiguration": "development"
