@@ -23,6 +23,8 @@ export class AuthenticationService {
           if (response.success) {
             this.storageService.set("accessToken", response?.accessToken);
             callbackSuccess(response.message); //passing success message
+          } else {
+            throw response.message;
           }
         },
         error: (err) => {

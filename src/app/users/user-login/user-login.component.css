@@ -1,0 +1,90 @@
+.user-layout-container {
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.user-layout-img {
+    width:65%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-layout-img img {
+    width: 90%;
+    height: 83%;
+}
+
+.user-layout-form {
+    width:35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left:25px;
+}
+
+.user-layout-title {
+    width: 100%;
+    height:15%;
+    padding:0px 25px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.user-layout-title h2 {
+    font-weight: 800;
+    font-size:43px;
+    color: var(--third-color);
+}
+
+.user-layout-title span {
+    font-size:19px;
+    font-weight: 500;
+    color:#a5a7a8;
+}
+
+.user-form-container {
+    width:100%;
+    height:65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5px;
+}
+
+.user-form-container form {
+    width: 90%;
+    height: 90%;
+    margin-top: 30px; 
+}
+
+.user-layout-container input {
+    height: 50px;
+    border:1px solid #a5a7a8;
+}
+
+.user-layout-container label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--third-color);
+}
+
+.user-layout-container a {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--first-color);
+}
+
+.user-layout-form #signin-btn {
+    width:100%;
+    height:50px;
+    margin-top: 70px;
+    color:white;
+    background-color: var(--first-color);
+}

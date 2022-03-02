@@ -9,7 +9,6 @@ import { UserLoginComponent } from './users/user-login/user-login.component';
 import { UserRegisterComponent } from './users/user-register/user-register.component';
 import { UsersComponent } from './users/users.component';
 import { UsersRoutingModule } from './users/users-routing.module';
-import { UserFormLayoutComponent } from './users/shared/user-form-layout/user-form-layout.component';
 import { FooterLayoutComponent } from './core/shared/footer-layout/footer-layout.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { FooterLayoutComponent } from './core/shared/footer-layout/footer-layout
     UserLoginComponent,
     UserRegisterComponent,
     UsersComponent,
-    UserFormLayoutComponent,
     FooterLayoutComponent
   ],
   imports: [

@@ -3,6 +3,13 @@
     margin:0px;
     padding:0px;
     box-sizing: border-box;
+    font-family: 'Shippori Antique B1', sans-serif;
+}
+
+:root {
+    --first-color: #F27281;
+    --second-color: #F8B195;
+    --third-color: #345D7E; 
 }
 
 html, body { height: 100%; }
