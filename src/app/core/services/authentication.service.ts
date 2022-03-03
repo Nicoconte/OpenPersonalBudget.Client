@@ -34,14 +34,17 @@ export class AuthenticationService {
   }
 
   public isAuthenticated() : boolean {
-    return this.storageService.exists("accessToken") && this.storageService.get("accessToken") != null;
+    return this.storageService.exists("accessToken") && this.storageService.get("accessToken") != "";
   }
 
   public logout(callback : Function | null = null) : void {
+    if (this.storageService.exists("rememberMeFlag") && Boolean(this.storageService.get("rememberMeFlag")))
+      return;
+
     this.storageService.remove("accessToken");
     
     if (callback != null) 
-      callback(); 
+      callback();
   }
 
   public destroySession() : void {

@@ -8,9 +8,9 @@
             <span class="mt-2">Doesn't have an account yet? <a href="">Sign up</a></span>
         </div>
         <div class="user-form-container">
-            <form action="">
+            <form [formGroup]="loginForm">
                 <label for="user-username">Username</label>
-                <input id="user-username" type="text" class="form-control" placeholder="Your username"
+                <input id="user-username" formControlName="username"  type="text" class="form-control" placeholder="Your username"
                     aria-label="Recipient's username" aria-describedby="basic-addon2">
 
                 <div class="w-100 d-flex flex-row" style="margin-top:35px;">
@@ -22,20 +22,32 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input id="user-password" type="text" class="form-control" placeholder="Enter 8 character or more"
+                    <input id="user-password" formControlName="password" type="password" class="form-control" placeholder="Enter 8 character or more"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="input-group-text d-flex justify-content-center align-items-center"
+                        <button (click)="togglePasswordInput()" class="input-group-text d-flex justify-content-center align-items-center"
                             style="width:60px;border:1px solid #a5a7a8;">
                             <i class="fa fa-eye"></i>
                         </button>
                     </div>
                 </div>
+                <span *ngIf="this.loginForm.get('password')?.errors?.['minlength']" class="text-danger">
+                    You should enter an 8 characters password
+                </span>
                 <div class="form-check ml-1">
                     <input type="checkbox" class="form-check-input" style="width:20px;">
                     <label class="form-check-label ml-3" style="font-weight:300;font-size:18px;color:#a5a7a8;position:absolute;top:16px;" for="exampleCheck1">Remember me</label>
                 </div>
-                <button class="btn w-100" id="signin-btn">Sign in</button>
+                <button 
+                    (click)="loginUser()"
+                    class="btn w-100" 
+                    id="signin-btn" 
+                    [disabled]="
+                    this.loginForm.get('username')?.errors?.['required'] ||
+                    (this.loginForm.get('password')?.errors?.['required'] || this.loginForm.get('password')?.errors?.['minlength'])"
+                >
+                    Sign in
+                </button>
             </form>
         </div>
     </div>
