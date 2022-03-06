@@ -14,7 +14,7 @@ export class StorageService {
   public get(key: string): string | null {
     return this.exists(key) ? localStorage.getItem(key) : null;
   }
-
+  
   public set(key: string, value: any): void {
     if (this.exists(key))
       return;

@@ -7,9 +7,17 @@
 }
 
 :root {
-    --first-color: #F27281;
-    --second-color: #F8B195;
-    --third-color: #345D7E; 
+    --primary-color: #F27281;
+    --primary-color-hover-dark: #dd5464;
+    --primary-color-hover-light: #f08c98;
+
+    --secondary-color: #F8B195;
+    --secondary-color-hover-dark: #c76740; 
+    --secondary-color-hover-light: #f5bca5;
+
+    --tertiary-color: #345D7E; 
+    --tertiary-color-hover-dark: #135a94; 
+    --tertiary-color-hover-light: #5c7e99; 
 }
 
 html, body { height: 100%; }

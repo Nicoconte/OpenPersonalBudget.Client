@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IAuthenticationRequest } from 'src/app/core/contracts/authentication-contract';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
-import { HttpErrorResponseHandler } from 'src/app/core/handler/http-response-error-handler';
+import { HttpErrorResponseHandler } from 'src/app/core/handler/http-error-response-handler';
 
 @Component({
   selector: 'app-user-login',

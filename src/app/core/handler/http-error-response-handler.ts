@@ -15,7 +15,7 @@ export class HttpErrorResponseHandler {
 
         let messages: string = "";
 
-        //fetch data from Fluent Validation response
+        //fetch data from Fluent Validation schema
         Object.keys(httpErr?.error?.errors).forEach(k => {
             messages += `${httpErr?.error?.errors[k][0]}\n`;
         });

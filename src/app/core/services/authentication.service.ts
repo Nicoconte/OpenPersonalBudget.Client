@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 import { IAuthenticationRequest, IAuthenticationResponse } from '../contracts/authentication-contract';
@@ -19,7 +19,7 @@ export class AuthenticationService {
     this.httpClient
       .post<IAuthenticationResponse>(`${this.baseUrl}/auth`, authRequest)
       .subscribe({
-        next: (response) => {
+        next: (response : IAuthenticationResponse) => {
           if (response.success) {
             this.storageService.set("accessToken", response?.accessToken);
             callbackSuccess(response.message); //passing success message
@@ -27,7 +27,7 @@ export class AuthenticationService {
             throw response.message;
           }
         },
-        error: (err) => {
+        error: (err : HttpErrorResponse) => {
           callbackErr(err); //passing err message
         }
       });
